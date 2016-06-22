@@ -204,6 +204,8 @@ Vector和Heap都是array-based，因此我们可以将二者抽象为**ArrayCont
 
 #### Deque(sequential-based, double linked-list)
 
+![Deque](image/deque_extends_queue.png)
+
 **Deque**: 称之为double-ended queue；可以在队列两段进行插入和删除操作
 
 > Deque继承Queue，比Queue增加的功能为可以任意的一端进行插入和删除操作
