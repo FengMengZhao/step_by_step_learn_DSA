@@ -15,6 +15,7 @@
 - 只针对DSA的小白，如果你是大神，请指教
 - **可视化**的重要性，要在脑海中建立抽象模型
 - 源代码要看完之后自己coding
+- 项目的`src`目录下有源代码和大量的测试代码，所有代码均为亲测可行
 
 #### 亮点
 
@@ -27,6 +28,8 @@
 
 - Enterprise Architect，工业界使用广泛的UML建模工具
 - Java，数据结构用Java语言实现
+
+**如果想获得Enterprise Architect(version12.1)工业版免费安装，请访问[https://fmzhao.github.io/guestbook/]留言邮箱** 
 
 #### 结构框架
 
@@ -287,6 +290,12 @@ Vector和Heap都是array-based，因此我们可以将二者抽象为**ArrayCont
 
 [Deque.java](src/generalize/Deque.java)
 
+[TreeContainer.java](src/generalize/TreeContainer.java)
+
+[BinaryTree.java](src/generalize/BinaryTree.java)
+
+[BinarySearchTree.java](src/generalize/BinarySearchTree.java)
+
 ---
 
 #### General Binary Tree
@@ -304,7 +313,9 @@ Vector和Heap都是array-based，因此我们可以将二者抽象为**ArrayCont
 
 **Implementation**
 
-> 此时我们已经建立的完全的抽象模型，实现也是几部模型进行。
+> 此时我们已经建立的完全的抽象模型，实现也是基于模型进行。
+
+[TreeContainer.java](src/generalize/TreeContainer.java)
 
 [BinaryTree.java](src/generalize/BinaryTree.java)
 
@@ -345,5 +356,5 @@ Vector和Heap都是array-based，因此我们可以将二者抽象为**ArrayCont
 - dictionary
 
 ---
-
+<center>End</center>
 ---
