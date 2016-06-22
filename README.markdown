@@ -56,8 +56,8 @@
 
 **DynamicVector**: 是一个动态的Vector，当Collection的容量等于Collection的size()的时候，要记性插入操作就要动态的扩充Collection的容量。
 
-[Vector.java]()
+[Vector.java](src/Vector.java)
 
-[FixedVector.java]()
+[FixedVector.java](src/FixedVector.java)
 
-[DynamicVector.java]()
+[DynamicVector.java](src/DynamicVector.java)
