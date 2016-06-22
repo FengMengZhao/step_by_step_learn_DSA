@@ -241,4 +241,109 @@ Vector和Heap都是array-based，因此我们可以将二者抽象为**ArrayCont
 
 ![array-container linear linked-container](image/array_linear_linked_container.png)
 
+---
+
+#### 进一步抽象化Container
+
+接下来我们要讲解General Binary Tree，由于General Binary Tree是Linked Container，但是不是Linear Linked Container，所以我么有必要将我们的UML模型记性进一步的抽象。
+
+![结构框架](image/dsa_learn_scheme.png "结构框架")
+
+**Container-ArrayContiner部分**
+
+![container arrayContainer](image/container_arrayContainer.png)
+
+*源代码*
+
+[Container.java](src/generalize/Container.java)
+
+[ArrayContainer.java](src/generalize/ArrayContainer.java)
+
+[Vector.java](src/generalize/Vector.java)
+
+[FixedVector.java](src/generalize/FixedVector.java)
+
+[DynamicVector.java](src/generalize/DynamicVector.java)
+
+[Heap.java](src/generalize/Heap.java)
+
+[MaxHeap.java](src/generalize/MaxHeap.java)
+
+[MinHeap.java](src/generalize/MinHeap.java)
+
+**Container-LinkedContainer部分**
+
+![Container linkedContainer](image/container_linkedContainer.png)
+
+**源代码**
+
+[LinkedContainer.java](src/generalize/LinkedContainer.java)
+
+[LinearLinkedContainer.java](src/generalize/LinearLinkedContainer.java)
+
+[Stack.java](src/generalize/Stack.java)
+
+[Queue.java](src/generalize/Queue.java)
+
+[Deque.java](src/generalize/Deque.java)
+
+---
+
 #### General Binary Tree
+
+![binary tree](image/binary_tree.png)
+
+操作:
+
+- clear() : 清空Collection
+- height() : 二叉树的高度
+- inorderTraverse() : 中序遍历
+- postorderTraverse() : 后序遍历
+- preorderTraverse() : 前序遍历
+- size() : Collection中包含的元素的多少
+
+**Implementation**
+
+> 此时我们已经建立的完全的抽象模型，实现也是几部模型进行。
+
+[BinaryTree.java](src/generalize/BinaryTree.java)
+
+**BinaryTree的应用**
+
+- Huffman coding
+- Expression Tree
+
+---
+
+#### BinarySearchTree(BST)
+
+![binary search tree](image/binary_search_tree.png)
+
+**BST**: 是一个绝对有序的二叉树(totally ordered binary tree)。绝对有序指的是：一个node的leftChild的data小于node的data；node的rightChild的data大于或者等于node的data。
+
+操作：
+
+- clear() : 清除Collection
+- find(element) : 查找指定的element
+- inorderTraverse(processor) : 中序遍历
+- insert(element) : 插入element到Collection中
+- isEmpty() : 判断Collection是否为空
+- maximum() : 得到Collection的最大element
+- minimum() : 得到Collection的最小element
+- postorderTraverse(processor) : 后序遍历
+- predecessor(element) : get the inorder predecessor of the given element
+- preorderTraverse(processor) : 前序遍历
+- remove(element) : 从Collection中删除指定的element
+- successor() : get the inorder successor of the given element
+
+**Implementation**
+
+[BinarySearchTree.java](src/generalize/BinarySearchTree.java)
+
+**BST应用**
+
+- dictionary
+
+---
+
+---
