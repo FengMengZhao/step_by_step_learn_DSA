@@ -234,3 +234,9 @@ Vector和Heap都是array-based，因此我们可以将二者抽象为**ArrayCont
 ![linear linked container](image/linear_linked_container.png)
 
 ---
+
+#### 抽象化LinkedContainer和ArrayContainer为Container
+
+![array-container linear linked-container](image/array_linear_linked_container.png)
+
+#### General Binary Tree
