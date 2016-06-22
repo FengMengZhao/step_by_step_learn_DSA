@@ -1,6 +1,6 @@
-### Follow me, step by step, learn Data Structure and Algorithm
+### 跟着我，一步一个脚印，学习数据结构与算法 
 
-从底层实现是数组的**Vector Hea**到底层实现是链表的**Stack Queue Deque BinaryTree BinarySearchTree**，一步一步用源代码解开数据结构神秘的面纱
+从底层实现是数组的**Vector、Heap**到底层实现是链表的**Stack、Queue、Deque、BinaryTree、BinarySearchTree**，一步一步用源代码解开数据结构神秘的面纱
 
 #### 目的
 
@@ -31,3 +31,33 @@
 #### 结构框架
 
 ![结构框架](image/dsa_learn_scheme.png "结构框架")
+
+#### Vector
+
+![Vector](image/dynamic_fixed_vector.png "Vector")
+
+**vector**: a random-access collection of elements
+
+操作：
+
+- append(element) : 添加一个新的元素到这个Collection中
+- clear() : 清空这个Collection
+- contains(element) : Collection中是否含有元素element
+- elementAt(index) : 获取相应index的元素
+- indexOf(element) : 获取element的index
+- insertAt(index, element) : 在指定的index处插入element
+- isEmpty() : Collection是否为空
+- removeAt(index) : 删除指定index的element
+- remove(element) : 删除Collection中指定的element
+- replace(index, element) : 替换掉指定index处的元素为element
+- size() : Collection共包含多少个元素
+
+**FixedVector**: 是传统意义上的Vector，也就是数组的一个简单包装。当Collection的容量等于Collection的size()的时候，就不能执行append()和insertAt()操作。
+
+**DynamicVector**: 是一个动态的Vector，当Collection的容量等于Collection的size()的时候，要记性插入操作就要动态的扩充Collection的容量。
+
+[Vector.java]()
+
+[FixedVector.java]()
+
+[DynamicVector.java]()
