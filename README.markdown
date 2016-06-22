@@ -29,7 +29,7 @@
 - Enterprise Architect，工业界使用广泛的UML建模工具
 - Java，数据结构用Java语言实现
 
-**如果想获得Enterprise Architect(version12.1)工业版免费安装，请访问[https://fmzhao.github.io/guestbook/]留言邮箱** 
+**如果想获得Enterprise Architect(version12.1)工业版免费安装，请[留言邮箱](https://fmzhao.github.io/guestbook/)。**
 
 #### 结构框架
 
