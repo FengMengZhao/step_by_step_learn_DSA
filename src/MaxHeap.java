@@ -1,14 +1,10 @@
 package org.fmz.container;
 
+
 public class MaxHeap extends Heap {
 
 
-
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
-
-	protected MaxHeap(){
+	public MaxHeap(){
 
 	}
 
@@ -16,21 +12,20 @@ public class MaxHeap extends Heap {
 	 * 
 	 * @param initCapacity
 	 */
-	protected MaxHeap(int initCapacity){
-		super(initCapacity) ;
+	public MaxHeap(int initCapacity){
+        super(initCapacity) ;
 	}
 
 	public Comparable peekMax(){
-		return peek() ;
+		return peek();
 	}
 
 	protected void percolate(){
-		int pos = size() - 1 ;
-		while(pos != 0 &&
-				data[pos].compareTo(data[parent(pos)]) > 0){
-			swap(data, pos, parent(pos)) ;
-			pos = parent(pos) ;
-		}
+        int pos = size() - 1 ;
+        while(pos !=0 && data[pos].compareTo(data[parent(pos)]) > 0){
+            swap(data, pos, parent(pos)) ;
+            pos = parent(pos) ;
+        }
 	}
 
 	public Comparable removeMax(){
@@ -38,24 +33,19 @@ public class MaxHeap extends Heap {
 	}
 
 	protected void sift(){
-		int pos = 0,
-			i,
-			r_pos ;
-		while(!isLeaf(pos)){
-			i = leftChild(pos) ;
-			r_pos = rightChild(pos) ;
-
-			if(r_pos < size() &&
-					data[i].compareTo(data[r_pos]) < 0)
-				i = r_pos ;
-
-			if(data[pos].compareTo(data[i]) >= 0)
-				return ;
-
-			swap(data, pos, i) ;
-
-			i = pos ;
-		}
+        int pos = 0,
+            i,
+            rc ;
+        while(! isLeaf(pos)){
+            i = leftChild(pos) ;
+            rc = rightChild(pos) ;
+            if(rc < size() && data[i].compareTo(data[rc]) < 0)
+                i = rc ;
+            if(data[pos].compareTo(data[i]) >= 0)
+                return ;
+            swap(data, i, pos) ;
+            pos = i ;
+        }
 	}
 
 }
