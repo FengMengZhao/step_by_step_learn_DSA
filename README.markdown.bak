@@ -1,83 +1,35 @@
-# 一步一个脚印学习DSA(Data Structure & Algorithm)
+### 跟着我，一步一个脚印，学习数据结构与算法 
 
----
+从底层实现是数组的**Vector、Heap**到底层实现是链表的**Stack、Queue、Deque、BinaryTree、BinarySearchTree**，一步一步用源代码解开数据结构神秘的面纱
 
-## 目录
+#### 目的
 
-- [简介](#1)
-    - [目的](#1.1)
-    - [读者群](#1.2)
-    - [术语和缩写](#1.3)
-    - [工具](#1.4)
-    - [概览](#1.5)
-- [Vector](#2)
-- [DynamciVector及Vector Generalization](#3)
-- [Heap](#4)
-- [Array-Based Container Generalization](#5)
-- [Stack](#6)
-- [Queue](#7)
-- [Deque](#8)
-- [Linked-Based Container Generalization](#9)
-- [Array-Based Container & Linked-Based Container Generalization](#10)
-- [BinaryTree](#11)
-- [BinarySearchTree及BinaryTree Generalization](#12)
-- [最终Generalization](#13)
+- 消除对数据结构和算法的恐惧，其实也就那么回事
+- 从一个DSA的小白到在自己脑海中构建**可视化**的数据结构
+- 理解数据结构的底层是怎么实现的，能够私人订制自己的数据结构
+- 在工作中遇到问题，知道从什么样的数据就够入手去解决问题
+- 对OOP(面向对象编程)思想有更加深刻的理解
 
----
+#### 注意
 
-<h3 id="1">简介</h3>
+- 只针对DSA的小白，如果你是大神，请指教
+- **可视化**的重要性，要在脑海中建立抽象模型
+- 源代码要看完之后自己coding
+- 项目的`src`目录下有源代码和大量的测试代码，所有代码均为亲测可行
 
-面向对象语言的三要素:封装,继承和多态.也可以理解为:抽象,封装和复用.
+#### 亮点
 
-- 抽象(Abstraction): 是一个一般化(generalization)的过程.代表了事物的必要信息,而没有具体的实现细节.抽象是一种实现的隐藏(Implementation hiding).
-- 封装(Encapsulation): 将事物的状态和对状态的操作整合为一个对象,并且严格限制外部对对象某些特征的访问.也就是说,将事物的内在表示从外部世界对它的定义中隐藏起来.封装是一种信息的隐藏(Informatica hiding).
+- 使用UML(统一建模语言)进行代码的自动生成
+- UML类图能够可视化类之间的关系，帮助理解结构之间的关系
+- 有详细的源代码和测试代码
+- 代码有详细的演变和泛化过程，帮助理解面向对象的抽象化
 
-> 抽象和封装是多多态的基石,多态是复用的一种.
-
-<h3 id="1.1">目的</h3>
-
-如何能够通过抽象,封装和复用设计出可插入,可扩展,灵活性好的软件系统是程序设计人员的不断追求.本项目从底层实现是数组的`Vector`,`Heap`到底层实现是链表的`Stack`,`Queue`,`Deque`,`BinaryTree`,`BinarySearchTree`,一步一步通过UML图和源代码实现的方式揭开类设计的神秘面纱:
-
-- 如何将数据和方法进行封装,将类的内部信息和外部接口分离,保证程序扩展和修改的灵活性
-- 如何抽象一个类,从而扩展出与之相似的类,实现抽象和多态(polymorphism)
-- 如何抽象类的等级结构(hierarchy),保证整体结构的可插入行和可扩展性
-- 在类的等级结构进化过程中,数据和方法是分别朝着什么方法进化
-- 如何将类等级结构通过UML方式表示出来,并通过UML自动生成源代码
-
-<h3 id="1.2">读者群</h3>
-
-如果你初学数据结构和算法,对Java类集框架底层实现和类结构演化感兴趣;如果你想了解简单的类设计,想弄明白平时常用的Java类集抽象层的设计原理;如果你想找一个完整的,一步一个脚印的类演化过程;如果你想学习UML,通过手画UML理解类之间的继承关联和依赖等关系,私下里过一下设计师的瘾;那么,这个入门的项目就是为你设计的,希望能够给你提供价值.
-
-<h3 id="1.3">术语和缩写</h3>
-
-- UML(Unified Model Language, 统一建模语言): 软件软件工程行业一种通用的,开发级建模语言,这种语言致力于提供标准的可视化系统设计.本项目使用UML描述类结构的进化过程.[https://en.wikipedia.org/wiki/Unified_Modeling_Language](https://en.wikipedia.org/wiki/Unified_Modeling_Language, "UML")
-- 类图(Class Diagram): UML中的一种静态结构类型.类图可以通过系统的类,属性和方法以及类之间的关系描述整个系统的结构.本项目中用到的类关系主要有继承,关联和依赖三种.[https://en.wikipedia.org/wiki/Class_diagram](https://en.wikipedia.org/wiki/Class_diagram, "Class Diagram")
-
-<h3 id="1.4">工具</h3>
+#### 工具
 
 - Enterprise Architect，工业界使用广泛的UML建模工具
-- JDK，数据结构用Java语言实现
+- Java，数据结构用Java语言实现
 
-<h3 id="1.5">概览</h3>
-
-- 第二部分,介绍`Vector`数据结构
-- 第三部分,介绍`DynamicVector`及对`Vector`的一般化抽象
-- 第四部分,介绍`Heap`数据结构,包括`MaxHeap`和`MinHeap`
-- 第五部分,介绍底层实现是Array的`Vector`和`Heap`的一般化抽象
-- 第六部分,介绍`Stack`数据结构
-- 第七部分,介绍`Queue`数据结构
-- 第八部分,介绍`Deque`数据结构及对`Queue`的一般化抽象
-- 第九部分,介绍底层实现是Linked Node的`Stack`,`Queue`及`Deque`的一般化抽象
-- 第十部分,介绍底层实现是Array的`ArrayContainer`和底层实现是Linked Node的`LinkedContainer`的一般化抽象
-- 第十一部分,介绍`BinaryTree`数据结构
-- 第十二部分,介绍`BinarySearchTree`数据结构及底层实现是`TreeNode`的`BinaryTree`的一般化抽象
-- 第十三部分,最终的一般化抽象.介绍将底层实现是Array的`ArrayContainer`和底层实现是`LinkedNode`的`LinearLinkedContainer`以及底层实现是`TreeNode`的`TreeContainer`的一般化抽象.
-
-先一睹为快最终的继承体系:
-
-![最终抽象UML](image/overview.png)
-
----
+**如果想获得Enterprise Architect(version12.1)工业版免费安装，请[留言邮箱](https://fmzhao.github.io/guestbook/)。**
 
 #### 结构框架
 
