@@ -4,36 +4,36 @@
 
 ## 目录
 
-- [简介](#1)
+- 一. [简介](#1)
     - [目的](#1.1)
     - [读者群](#1.2)
     - [术语和缩写](#1.3)
     - [工具](#1.4)
     - [概览](#1.5)
-- [Vector](#2)
+- 二. [Vector](#2)
     - [目前的Model](#2.1)
     - [Vector抽象数据类型(ADT)](#2.2)
     - [Vector UML类图](#2.3)
     - [Vector数据结构(Data Structure)](#2.4)
-- [DynamciVector及Vector Generalization](#3)
+- 三. [DynamciVector及Vector Generalization](#3)
     - [目前的Model](#3.1)
     - [DynamicVector UML类图](#3.2)
     - [FixedVector & DynamicVector Gneralization](#3.3)
     - [Vector一般化抽象实现](#3.4)
-- [Heap](#4)
-- [Array-Based Container Generalization](#5)
-- [Stack](#6)
-- [Queue](#7)
-- [Deque](#8)
-- [Linked-Based Container Generalization](#9)
-- [Array-Based Container & Linked-Based Container Generalization](#10)
-- [BinaryTree](#11)
-- [BinarySearchTree及BinaryTree Generalization](#12)
-- [最终Generalization](#13)
+- 四. [Heap](#4)
+- 五. [Array-Based Container Generalization](#5)
+- 六. [Stack](#6)
+- 七. [Queue](#7)
+- 八. [Deque](#8)
+- 九. [Linked-Based Container Generalization](#9)
+- 十. [Array-Based Container & Linked-Based Container Generalization](#10)
+- 十一. [BinaryTree](#11)
+- 十二. [BinarySearchTree及BinaryTree Generalization](#12)
+- 十三. [最终Generalization](#13)
 
 ---
 
-<h3 id="1">简介</h3>
+<h3 id="1">一. 简介</h3>
 
 面向对象语言的三要素:封装,继承和多态.也可以理解为:抽象,封装和复用.
 
@@ -89,7 +89,7 @@
 
 ---
 
-<h3 id="2">Vector</h3>
+<h3 id="2">二. Vector</h3>
 
 <h4 id="2.1">目前的Model</h4>
 
@@ -123,7 +123,7 @@
 
 ---
 
-<h3 id="3">DynamciVector及Vector Generalization</h3>
+<h3 id="3">三. DynamciVector及Vector Generalization</h3>
 
 <h4 id="3.1">目前的Model</h4>
 
