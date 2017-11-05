@@ -20,23 +20,30 @@
     - [DynamicVector UML类图](#3.2)
     - [FixedVector & DynamicVector Gneralization](#3.3)
     - [Vector一般化抽象实现](#3.4)
-- 四. [Heap及MaxHap & MinHeap一般化抽象](#4)
+- 四. [Heap及ArrayBased Container一般化抽象](#4)
     - [目前的Model](#4.1)
     - [Heap抽象数据类型(ADT)](#4.2)
     - [Heap UML类图](#4.3)
     - [Heap一般化抽象实现](#4.4)
-- 五. [Array-Based Container Generalization](#5)
+    - [Array-Based Container UML类图](#4.5)
+    - [Array-Based Container实现](#4.6)
+- 五. [Stack(sequential-based, single lined-list)及ArrayContainer & Stack一般化抽象](#5)
     - [目前的Model](#5.1)
-    - [Array-Based Container UML类图](#5.2)
-    - [Array-Based Container实现](#5.3)
-- 六. [Stack](#6)
+    - [Stack抽象数据类型(ADT)](#5.2)
+    - [Stack UML图](#5.3)
+    - [Stack实现](#5.4)
+    - [ArrayContainer & Stack一般化抽象UML图](#5.5)
+    - [ArrayContainer & Stack一般化抽象实现](#5.6)
+- 六. [Queue(sequential-based, double linked-list)及ArrayContainer & Stack & Queue一般化抽象](#6)
     - [目前的Model](#6.1)
-    - [Stack(sequential-based, single lined-list)抽象数据类型(ADT)](#6.2)
-    - [Stack UML图](#6.3)
-    - [Stack实现](#6.4)
-- 七. [Queue](#7)
-- 八. [Deque](#8)
-- 九. [Linked-Based Container Generalization](#9)
+    - [Queue抽象数据类型(ADT)](#6.2)
+    - [Queue UML图](#6.3)
+    - [Queue 实现](#6.4)
+    - [ArrayContainer & Stack & Queue一般化抽象UML图](#6.5)
+    - [ArrayContainer & Stack & Queuek一般化抽象实现](#6.6)
+- 七. [Deque](#7)
+    - [目前的Model](#7.1)
+- 八. [Linked-Based Container Generalization](#8)
 - 十. [Array-Based Container & Linked-Based Container Generalization](#10)
 - 十一. [BinaryTree](#11)
 - 十二. [BinarySearchTree及BinaryTree Generalization](#12)
@@ -60,7 +67,7 @@
 - 如何将数据和方法进行封装,将类的内部信息和外部接口分离,保证程序扩展和修改的灵活性
 - 如何抽象一个类,从而扩展出与之相似的类,实现抽象和多态(polymorphism)
 - 如何抽象类的等级结构(hierarchy),保证整体结构的可插入行和可扩展性
-- 在类的等级结构进化过程中,数据和方法是分别朝着什么方法进化
+- 在类的等级结构进化过程中,数据和方法是分别朝着什么方法移动
 - 如何将类等级结构通过UML方式表示出来,并通过UML自动生成源代码
 
 <h3 id="1.2">读者群</h3>
@@ -168,11 +175,11 @@
 
 ---
 
-<h3 id="4">四. Heap及MaxHap & MinHeap一般化抽象</h3>
+<h3 id="4">四. Heap及ArrayBased Container一般化抽象</h3>
 
 <h4 id="4.1">目前的Model</h4>
 
-![目前的Model](image/current-heap-generalization.png "Heap Generalization")
+![目前的Model](image/current-arraybased-generalization.png)
 
 <h4 id="4.2">Heap抽象数据类型(ADT)</h4>
 
@@ -206,21 +213,13 @@ Heap二叉树相关:
 - [MinHeap.java](src/MinHeap.java)
 - [MaxHeap.java](src/MaxHeap.java)
 
----
-
-<h3 id="5">五. Array-Based Container Generalization</h3>
-
 第二部分中介绍的`Vector`和第三部分介绍的`Heap`底层实现都是Array.同样,我们将之进行一般化抽象.
 
-<h4 id="5.1">目前的Model</h4>
-
-![目前的Model](image/current-arraybased-generalization.png)
-
-<h4 id="5.2">Array-Based Container UML类图</h4>
+<h4 id="4.5">Array-Based Container UML类图</h4>
 
 ![Vector & Heap Generalization](image/vector-heap-generalization.png "ArrayBased Container")
 
-<h4 id="5.3">Array-Based Container实现</h4>
+<h4 id="4.6">Array-Based Container实现</h4>
 
 **源码:**
 
@@ -234,15 +233,15 @@ Heap二叉树相关:
 
 ---
 
-<h3 id="6">六. Stack</h3>
+<h3 id="5">五. Stack(sequential-based, single lined-list)及ArrayContainer & Stack一般化抽象</h3>
 
-我们在第二三四五部分介绍了Array-Based的数据结构及它们的一般化抽象;在接下来的第六七八九部分将介绍LinkedNode-Based的数据结构及它们的一般化抽象过程.首先要介绍的是以链表为底层实现的栈(Stack).
+我们在第二三四部分介绍了Array-Based的数据结构及它们的一般化抽象;在接下来的第六七八部分将介绍LinkedNode-Based的数据结构及它们的一般化抽象过程.首先要介绍的是以链表为底层实现的栈(Stack).
 
-<h4 id="6.1">目前的Model</h4>
+<h4 id="5.1">目前的Model</h4>
 
 ![目前的Model](image/current-stack.png)
 
-<h4 id="6.2">Stack(sequential-based, single lined-list)抽象数据类型(ADT)</h4>
+<h4 id="5.2">Stack抽象数据类型(ADT)</h4>
 
 > 我们可以很容易的使用array container来实现Stack，但是我们通常使用链表来实现Stack。
 
@@ -267,46 +266,46 @@ Heap二叉树相关:
 - size() : Collection共有多少个元素
 - top() : 得到top元素
 
-<h4 id="6.3">Stack UML类图</h4>
+<h4 id="5.3">Stack UML类图</h4>
 
 ![Stack UML类图](image/stack.png)
 
-<h4 id="6.4">Stack实现</h4>
+<h4 id="5.4">Stack实现</h4>
 
 **源码:**
 
 - [Stack.java](src/Stack.java)
 - [LinearNode.java](src/LinearNode.java)
 
----
+<h4 id="5.5">ArrayContainer & Stack一般化抽象UML图</h4>
 
-**linear liked node**
+![ArrayBased Stack UML类图](image/arraybased-stack.png)
 
-[LinearNode.java](src/LinearNode.java)
+<h4 id="5.6">ArrayContainer & Stack一般化抽象实现</h4>
 
-**Implementation**
+**源码:**
 
-[Stack.java](src/stack.java)
-
-**Stack应用**
-
-- 括号匹配
-
-[BracketsMatch.java](src/BracketsMatch.java)
-
-- 中缀表达式计算
-
-[InfixExpressionEvaluate.java](src/InfixExpressionEvaluate.java)
-
-> 中缀表达式的软代码中使用的是java自带的Stack数据结构
+- [Container.java](src/arraybased-stack/Container.java)
+- [Vector.java](src/arraybased-stack/Vector.java)
+- [Heap.java](src/arraybased-stack/Heap.java)
+- [FixedVector.java](src/arraybased-stack/FixedVector.java)
+- [DynamicVector.java](src/arraybased-stack/DynamicVector.java)
+- [MaxHeap.java](src/arraybased-stack/MaxHeap.java)
+- [MinHeap.java](src/arraybased-stack/MinHeap.java)
+- [LinearNode.java](src/arraybased-stack/LinearNode.java)
+- [Stack.java](src/arraybased-stack/Stack.java)
 
 ---
 
-#### Queue(sequential-based, double linked-list)
+<h3 id="6">六. Queue(sequential-based, double linked-list)</h3>
 
-![Queue](image/queue.png)
+<h4 id="6.1">目前的Model</h4>
 
-**Queue**: 一组线性元素组成的Collection，只能从Collection的末尾获取元素；我们感兴趣的元素称之为front element；最后一个元素称之为back element
+![目前的Model](image/current-queue.png)
+
+<h4 id="6.2">Queue抽象数据类型(ADT)</h4>
+
+`Queue`: 一组线性元素组成的Collection，只能从Collection的末尾获取元素；我们感兴趣的元素称之为front element；最后一个元素称之为back element
 
 操作：
 
@@ -319,22 +318,44 @@ Heap二叉树相关:
 
 > 我们用单链表实现了Stack数据结构，由于队列有对头和对尾，我们要使用双链表实现Queue数据结构
 
-**修改上述的LineaNode为SLNode(Single linear linked node)**
+<h4 id="6.3">Queue UML图</h4>
 
-[SLNode.java](src/SLNode.java)
+![Queue](image/queue.png)
 
-**Double linear linked node**
+<h4 id="6.4">Queue实现</h4>
 
-[DLNode.java](src/DLNode.java)
+**源码:**
 
-**Implementation**
+- [Queue.java](src/Queue.java)
+- [SLNode.java](src/SLNode.java)
+- [DLNode.java](src/DLNode.java)
 
-[Queue.java](src/Queue.java)
+<h4 id="6.5">ArrayContainer & Stack & Queue一般化抽象UML图</h4>
 
-**Queue应用**
+![ArrayBased Contaner & Stack & Queue一般化抽象UML类图](image/arraybased-stack-queue.png)
 
-- 打印机
-- 计算机仿真
+<h4 id="6.6">ArrayContainer & Stack & Queue实现</h4>
+
+**源码:**
+
+- [Container.java](src/arraybased-stack-queue/Container.java)
+- [Vector.java](src/arraybased-stack-queue/Vector.java)
+- [Heap.java](src/arraybased-stack-queue/Heap.java)
+- [FixedVector.java](src/arraybased-stack-queue/FixedVector.java)
+- [DynamicVector.java](src/arraybased-stack-queue/DynamicVector.java)
+- [MaxHeap.java](src/arraybased-stack-queue/MaxHeap.java)
+- [MinHeap.java](src/arraybased-stack-queue/MinHeap.java)
+- [Stack.java](src/arraybased-stack-queue/Stack.java)
+- [SLNode.java](src/arraybased-stack-queue/SLNode.java)
+- [DLNode.java](src/arraybased-stack-queue/DLNode.java)
+- [Queue.java](src/arraybased-stack-queue/Queue.java)
+
+---
+
+
+
+
+
 
 ---
 
