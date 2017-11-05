@@ -1,4 +1,4 @@
-public class VectorBG{
+public class VectorInit{
 
     private Object[] data;
     private static final int DEFAULT_CAPACITY = 100;
