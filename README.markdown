@@ -26,6 +26,8 @@
     - [Heap UML类图](#4.3)
     - [Heap一般化抽象实现](#4.4)
 - 五. [Array-Based Container Generalization](#5)
+    - [目前的Model](#5.1)
+    - [](#5.2)
 - 六. [Stack](#6)
 - 七. [Queue](#7)
 - 八. [Deque](#8)
@@ -201,13 +203,36 @@ Heap二叉树相关:
 
 ---
 
-[Heap.java](src/Heap.java)
+<h3 id="5">Array-Based Container Generalization</h3>
 
-[MinHeap.java](src/MinHeap.java)
+第二部分中介绍的`Vector`和第三部分介绍的`Heap`底层实现都是Array.同样,我们将之进行一般化抽象.
 
-[MaxHeap.java](src/MaxHeap.java)
+<h4 id="5.1">目前的Model</h4>
 
-**Heap应用**
+![目前的Model](image/current-arraybased-generalization.png)
+
+<h4 id="5.2">Array-Based Container UML类图</h4>
+
+![Vector & Heap Generalization](image/vector-heap-generalization.png "ArrayBased Container")
+
+<h4 id="5.3">Array-Based Container实现</h4>
+
+**源码:**
+
+- [Container.java](src/arraybased/Container.java)
+- [Vector.java](src/arraybased/Vector.java)
+- [Heap.java](src/arraybased/Heap.java)
+- [FixedVector.java](src/arraybased/FixedVector.java)
+- [DynamicVector.java](src/arraybased/DynamicVector.java)
+- [MaxHeap.java](src/arraybased/MaxHeap.java)
+- [MinHeap.java](src/arraybased/MinHeap.java)
+
+---
+
+
+
+
+---
 
 - 堆排序(MinHeap)
 
