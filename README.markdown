@@ -93,7 +93,9 @@
 
 <h4 id="2.1">目前的Model</h4>
 
+<div align="center">
 ![目前的Model](image/current-fixed-vector.png "Fixed Vector")
+</div>
 
 <h4 id="2.2">Vector抽象数据类型(ADT)</h4>
 
