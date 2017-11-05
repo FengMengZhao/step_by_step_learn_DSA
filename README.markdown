@@ -15,12 +15,16 @@
     - [Vector抽象数据类型(ADT)](#2.2)
     - [Vector UML类图](#2.3)
     - [Vector数据结构(Data Structure)](#2.4)
-- 三. [DynamciVector及Vector Generalization](#3)
+- 三. [DynamicVector及Vector Generalization](#3)
     - [目前的Model](#3.1)
     - [DynamicVector UML类图](#3.2)
     - [FixedVector & DynamicVector Gneralization](#3.3)
     - [Vector一般化抽象实现](#3.4)
-- 四. [Heap](#4)
+- 四. [Heap及MaxHap & MinHeap一般化抽象](#4)
+    - [目前的Model](#4.1)
+    - [Heap抽象数据类型(ADT)](#4.2)
+    - [Heap UML类图](#4.3)
+    - [Heap一般化抽象实现](#4.4)
 - 五. [Array-Based Container Generalization](#5)
 - 六. [Stack](#6)
 - 七. [Queue](#7)
@@ -123,7 +127,7 @@
 
 ---
 
-<h3 id="3">三. DynamciVector及Vector Generalization</h3>
+<h3 id="3">三. DynamicVector及Vector Generalization</h3>
 
 <h4 id="3.1">目前的Model</h4>
 
@@ -141,7 +145,7 @@
 
 <h4 id="3.3">FixedVector & DynamicVector Gneralization</h4>
 
-`FixedVector`和`DynamicVector`是`Vector`两个不同的变种.它们具有一些必要的本质特种,而在某些操作(支持扩容与否)上略有差异.
+`FixedVector`和`DynamicVector`是`Vector`两个不同的变种.它们具有一些必要的本质特征,而在某些操作(支持扩容与否)上略有差异.
 
 **FixedVector和DynamicVector一般化抽象UML类图**
 
@@ -157,36 +161,22 @@
 
 ---
 
+<h3 id="4">Heap及MaxHap & MinHeap一般化抽象</h3>
 
+<h4 id="4.1">目前的Model</h4>
 
+![目前的Model](image/current-heap-generalization.png "Heap Generalization")
 
-**FixedVector**: 是传统意义上的Vector，也就是数组的一个简单包装。当Collection的容量等于Collection的size()的时候，就不能执行append()和insertAt()操作。
+<h4 id="4.2">Heap抽象数据类型(ADT)</h4>
 
-**DynamicVector**: 是一个动态的Vector，当Collection的容量等于Collection的size()的时候，要记性插入操作就要动态的扩充Collection的容量。
+`Heap` : Heap是一个部分有序完全二叉树(partially ordered complete binary tree);部分有序指: 堆的父元素总是比子元素小(大)，父元素比子元素大称之为MaxHeap，父元素比子元素小称之为MinHeap。
 
-**Implementation**
+Heap二叉树相关:
 
-[Vector.java](src/Vector.java)
-
-[FixedVector.java](src/FixedVector.java)
-
-[DynamicVector.java](src/DynamicVector.java)
-
----
-
-#### Heap(array-based)
-
-![Heap](image/max_min_heap.png)
-
-**Heap** : Heap是一个“部分有序完全二叉树(partially ordered complete binary tree)”；部分有序指：堆的父元素总是比子元素小(大)，父元素比子元素大称之为MaxHeap，父元素比子元素小称之为MinHeap。
-
-> 二叉树元素n的深度：从root开始到元素n必须经由的边的个数
-
-> 二叉树的高度：最深的一个元素的深度加1
-
-> 同样深度的元素为同一个level
-
-> 完全二叉树：二叉树的填充顺序是从root开始，从左到右依次填充每一个level
+- 二叉树元素n的深度：从root开始到元素n必须经由的边的个数
+- 二叉树的高度：最深的一个元素的深度加1
+- 同样深度的元素为同一个level
+- 完全二叉树：二叉树的填充顺序是从root开始，从左到右依次填充每一个level
 
 操作：
 
@@ -197,7 +187,19 @@
 - remove() : 删除root元素
 - size() : Collection中有多少个元素
 
-**Implementation**
+<h4 id="4.3">Heap UML类图</h4>
+
+![Heap UML类图](image/heap-generalization.png)
+
+<h4 id="4.4">Heap一般化抽象实现</h4>
+
+**源码:**
+
+- [Heap.java](src/Heap.java)
+- [MinHeap.java](src/MinHeap.java)
+- [MaxHeap.java](src/MaxHeap.java)
+
+---
 
 [Heap.java](src/Heap.java)
 
