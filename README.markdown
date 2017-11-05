@@ -210,7 +210,7 @@
 
 <h4 id="3.1">目前的Model</h4>
 
-![目前的Model](image/dynamic-vector.png "Dynamic Vector")
+![目前的Model](image/vector-generalization.png "Vector Generalization")
 
 **FixedVector**: 是传统意义上的Vector，也就是数组的一个简单包装。当Collection的容量等于Collection的size()的时候，就不能执行append()和insertAt()操作。
 
