@@ -13,9 +13,13 @@
 - [Vector](#2)
     - [目前的Model](#2.1)
     - [Vector抽象数据类型(ADT)](#2.2)
-    - [Vector数据结构(Data Structure)](#2.3)
+    - [Vector UML类图](#2.3)
+    - [Vector数据结构(Data Structure)](#2.4)
 - [DynamciVector及Vector Generalization](#3)
     - [目前的Model](#3.1)
+    - [DynamicVector UML类图](#3.2)
+    - [FixedVector & DynamicVector Gneralization](#3.3)
+    - [Vector一般化抽象实现](#3.4)
 - [Heap](#4)
 - [Array-Based Container Generalization](#5)
 - [Stack](#6)
@@ -89,7 +93,7 @@
 
 <h4 id="2.1">目前的Model</h4>
 
-![目前的Model](image/fixed-vector.png "Fixed Vector")
+![目前的Model](current-fixed-vector.png "Fixed Vector")
 
 <h4 id="2.2">Vector抽象数据类型(ADT)</h4>
 
@@ -109,100 +113,13 @@
 - replace(index, element) : 替换掉指定index处的元素为element
 - size() : Collection共包含多少个元素
 
-<h4 id="2.3">Vector数据结构(Data Structure)</h4>
+<h4 id="2.3">Vector UML类图</h4>
 
-    package org.fmz.container;
+![Vector UML类图](image/fixed-vector.png)
 
-    public class Vector{
+<h4 id="2.4">Vector数据结构(Data Structure)</h4>
 
-        private Object[] data;
-        private static final int DEFAULT_CAPACITY = 100;
-        private int numItems;
-
-        public Vector(){
-            data = new Object[DEFAULT_CAPACITY] ;
-        }
-
-        public boolean append(Object element){
-                if(isFull())
-                    return false;
-                data[numItems++] = element ;
-                return true ;
-        }
-
-        public void clear(){
-            for(int i=0; i<numItems; i++){
-                data[i] = null ;
-            }
-            numItems = 0 ;
-        }
-
-        public boolean contains(Object element){
-            return indexOf(element) != -1 ;
-        }
-
-        public Object elementAt(int index){
-            if(index < 0 || index > numItems-1)
-                return null;
-            return data[index] ;
-        }
-
-        public int indexOf(Object element){
-            for(int i=0; i<numItems; i++)
-                if(element.equals(data[i]))
-                    return i ;
-            return -1 ;
-        }
-
-        public boolean insertAt(int index, Object element){
-            if(index<0 || index>numItems-1 || isFull())
-                return false;
-            for(int i=numItems-1; i>=index; i--)
-                data[i+1] = data[i] ;
-            data[index] = element ;
-            numItems ++ ;
-            return true ;
-        }
-
-        public boolean isEmpty(){
-            return numItems == 0 ;
-        }
-
-        public boolean isFull(){
-            return numItems == data.length ;
-        }
-
-        public boolean remove(Object element){
-            int pos = indexOf(element) ;
-            if(pos == -1)
-                return false;
-            removeAt(pos) ;
-            return true ;
-        }
-
-        public Object removeAt(int index){
-            if(index < 0 || index > numItems-1)
-                return null ;
-            Object temp = data[index] ;
-            while(index < numItems-1)
-                data[index] = data[index+1] ;
-                index ++ ;
-            data[--numItems] = null ;
-            return temp ;
-        }
-
-        public boolean replace(int index, Object element){
-            if(index < 0 || index > numItems-1)
-                return false;
-            data[index] = element ;
-            return true ;
-        }
-
-        public int size(){
-            return numItems ;
-        }
-
-    }
+**源码:** [VectorInit.java](src/VectorInit.java)
 
 ---
 
@@ -210,7 +127,38 @@
 
 <h4 id="3.1">目前的Model</h4>
 
-![目前的Model](image/vector-generalization.png "Vector Generalization")
+![目前的Model](image/current-vector-generalization.png "Vector Generalization")
+
+<h4 id="3.2">DynamicVector UML类图</h4>
+
+`FixedVector`: 是传统意义上的Vector,也就是数组的一个简单包装.当Collection的容量等于Collection的size()的时候，就不能执行append()和insertAt()操作。第二部分中介绍的`Vector`就是`FixedVector`.
+
+`DynamicVector`: 是一个动态的Vector，当Collection的容量等于Collection的size()的时候，要记性插入操作就要动态的扩充Collection的容量。
+
+![DynamicVector类图](image/dynamic-vector.png)
+
+> 简化的UML图,省略了与`FixedVector`相同的部分.
+
+<h4 id="3.3">FixedVector & DynamicVector Gneralization</h4>
+
+`FixedVector`和`DynamicVector`是`Vector`两个不同的变种.它们具有一些必要的本质特种,而在某些操作(支持扩容与否)上略有差异.
+
+**FixedVector和DynamicVector一般化抽象UML类图**
+
+![Vector Generalization UML图](image/vector-generalization.png)
+
+<h4 id="3.4">Vector一般化抽象实现</h4>
+
+**源码:**
+
+- [Vector.java](src/Vector.java)
+- [FexedVector.java](src/FixedVector.java)
+- [DynamicVector](src/DynamicVector.java)
+
+---
+
+
+
 
 **FixedVector**: 是传统意义上的Vector，也就是数组的一个简单包装。当Collection的容量等于Collection的size()的时候，就不能执行append()和insertAt()操作。
 
