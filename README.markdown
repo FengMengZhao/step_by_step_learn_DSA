@@ -93,7 +93,7 @@
 
 <h4 id="2.1">目前的Model</h4>
 
-<div align="center">
+<div align=center>
 ![目前的Model](image/current-fixed-vector.png "Fixed Vector")
 </div>
 
