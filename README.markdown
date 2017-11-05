@@ -1,4 +1,4 @@
-# 一步一个脚印学习DSA(Data Structure & Algorithm)
+# 一步一个脚印学习类设计和抽象
 
 ---
 
@@ -11,7 +11,11 @@
     - [工具](#1.4)
     - [概览](#1.5)
 - [Vector](#2)
+    - [目前的Model](#2.1)
+    - [Vector抽象数据类型(ADT)](#2.2)
+    - [Vector数据结构(Data Structure)](#2.3)
 - [DynamciVector及Vector Generalization](#3)
+    - [目前的Model](#3.1)
 - [Heap](#4)
 - [Array-Based Container Generalization](#5)
 - [Stack](#6)
@@ -52,6 +56,8 @@
 
 - UML(Unified Model Language, 统一建模语言): 软件软件工程行业一种通用的,开发级建模语言,这种语言致力于提供标准的可视化系统设计.本项目使用UML描述类结构的进化过程.[https://en.wikipedia.org/wiki/Unified_Modeling_Language](https://en.wikipedia.org/wiki/Unified_Modeling_Language, "UML")
 - 类图(Class Diagram): UML中的一种静态结构类型.类图可以通过系统的类,属性和方法以及类之间的关系描述整个系统的结构.本项目中用到的类关系主要有继承,关联和依赖三种.[https://en.wikipedia.org/wiki/Class_diagram](https://en.wikipedia.org/wiki/Class_diagram, "Class Diagram")
+- 抽象数据类型(ADT, Abstract Data Type): 定义了数据类型的成员(member)和对成员的操作(operation).抽象一词表明此数据类型没有具体的实现细节,是抽象而不是具体的(concrete).[https://en.wikipedia.org/wiki/Abstract_data_type](https://en.wikipedia.org/wiki/Abstract_data_type "Abstract Data Type")
+- 数据结构(Data Structure): ADT的一种实现.一个数据结构是具体的,它定义了ADT的成员变量和对成员变量的操作.
 
 <h3 id="1.4">工具</h3>
 
@@ -73,23 +79,21 @@
 - 第十二部分,介绍`BinarySearchTree`数据结构及底层实现是`TreeNode`的`BinaryTree`的一般化抽象
 - 第十三部分,最终的一般化抽象.介绍将底层实现是Array的`ArrayContainer`和底层实现是`LinkedNode`的`LinearLinkedContainer`以及底层实现是`TreeNode`的`TreeContainer`的一般化抽象.
 
-先一睹为快最终的继承体系:
+先一睹为快最终的模型(Model):
 
 ![最终抽象UML](image/overview.png)
 
 ---
 
-#### 结构框架
+<h3 id="2">Vector</h3>
 
-![结构框架](image/dsa_learn_scheme.png "结构框架")
+<h4 id="2.1">目前的Model</h4>
 
----
+![目前的Model](image/fixed-vector.png "Fixed Vector")
 
-#### Vector(array-based)
+<h4 id="2.2">Vector抽象数据类型(ADT)</h4>
 
-![Vector](image/dynamic_fixed_vector.png "Vector")
-
-**vector**: a random-access collection of elements
+> **vector**: 一个随机访问(random-access)数据集.
 
 操作：
 
@@ -104,6 +108,109 @@
 - remove(element) : 删除Collection中指定的element
 - replace(index, element) : 替换掉指定index处的元素为element
 - size() : Collection共包含多少个元素
+
+<h4 id="2.3">Vector数据结构(Data Structure)</h4>
+
+    package org.fmz.container;
+
+    public class Vector{
+
+        private Object[] data;
+        private static final int DEFAULT_CAPACITY = 100;
+        private int numItems;
+
+        public Vector(){
+            data = new Object[DEFAULT_CAPACITY] ;
+        }
+
+        public boolean append(Object element){
+                if(isFull())
+                    return false;
+                data[numItems++] = element ;
+                return true ;
+        }
+
+        public void clear(){
+            for(int i=0; i<numItems; i++){
+                data[i] = null ;
+            }
+            numItems = 0 ;
+        }
+
+        public boolean contains(Object element){
+            return indexOf(element) != -1 ;
+        }
+
+        public Object elementAt(int index){
+            if(index < 0 || index > numItems-1)
+                return null;
+            return data[index] ;
+        }
+
+        public int indexOf(Object element){
+            for(int i=0; i<numItems; i++)
+                if(element.equals(data[i]))
+                    return i ;
+            return -1 ;
+        }
+
+        public boolean insertAt(int index, Object element){
+            if(index<0 || index>numItems-1 || isFull())
+                return false;
+            for(int i=numItems-1; i>=index; i--)
+                data[i+1] = data[i] ;
+            data[index] = element ;
+            numItems ++ ;
+            return true ;
+        }
+
+        public boolean isEmpty(){
+            return numItems == 0 ;
+        }
+
+        public boolean isFull(){
+            return numItems == data.length ;
+        }
+
+        public boolean remove(Object element){
+            int pos = indexOf(element) ;
+            if(pos == -1)
+                return false;
+            removeAt(pos) ;
+            return true ;
+        }
+
+        public Object removeAt(int index){
+            if(index < 0 || index > numItems-1)
+                return null ;
+            Object temp = data[index] ;
+            while(index < numItems-1)
+                data[index] = data[index+1] ;
+                index ++ ;
+            data[--numItems] = null ;
+            return temp ;
+        }
+
+        public boolean replace(int index, Object element){
+            if(index < 0 || index > numItems-1)
+                return false;
+            data[index] = element ;
+            return true ;
+        }
+
+        public int size(){
+            return numItems ;
+        }
+
+    }
+
+---
+
+<h3 id="3">DynamciVector及Vector Generalization</h3>
+
+<h4 id="3.1">目前的Model</h4>
+
+![目前的Model](image/dynamic-vector.png "Dynamic Vector")
 
 **FixedVector**: 是传统意义上的Vector，也就是数组的一个简单包装。当Collection的容量等于Collection的size()的时候，就不能执行append()和insertAt()操作。
 
