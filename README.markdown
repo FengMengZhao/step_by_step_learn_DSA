@@ -27,8 +27,12 @@
     - [Heap一般化抽象实现](#4.4)
 - 五. [Array-Based Container Generalization](#5)
     - [目前的Model](#5.1)
-    - [](#5.2)
+    - [Array-Based Container实现](#5.2)
 - 六. [Stack](#6)
+    - [目前的Model](#6.1)
+    - [Stack(sequential-based, single lined-list)抽象数据类型(ADT)](#6.2)
+    - [Stack UML图](#6.3)
+    - [Stack实现](#6.4)
 - 七. [Queue](#7)
 - 八. [Deque](#8)
 - 九. [Linked-Based Container Generalization](#9)
@@ -163,7 +167,7 @@
 
 ---
 
-<h3 id="4">Heap及MaxHap & MinHeap一般化抽象</h3>
+<h3 id="4">四. Heap及MaxHap & MinHeap一般化抽象</h3>
 
 <h4 id="4.1">目前的Model</h4>
 
@@ -203,7 +207,7 @@ Heap二叉树相关:
 
 ---
 
-<h3 id="5">Array-Based Container Generalization</h3>
+<h3 id="5">五. Array-Based Container Generalization</h3>
 
 第二部分中介绍的`Vector`和第三部分介绍的`Heap`底层实现都是Array.同样,我们将之进行一般化抽象.
 
@@ -229,30 +233,15 @@ Heap二叉树相关:
 
 ---
 
+<h3 id="6">六. Stack</h3>
 
+我们在第二三四五部分介绍了Array-Based的数据结构及它们的一般化抽象;在接下来的第六七八九部分将介绍LinkedNode-Based的数据结构及它们的一般化抽象过程.首先要介绍的是以链表为底层实现的栈(Stack).
 
+<h4 id="6.1">目前的Model</h4>
 
----
+![目前的Model](image/current-stack.png)
 
-- 堆排序(MinHeap)
-
-[HeapSort.java](src/HeapSort.java)
-
----
-
-#### 抽象Vector和Heap为ArrayContainer
-
-Vector和Heap都是array-based，因此我们可以将二者抽象为**ArrayContainer**
-
-**ArrayContainer**
-
-![array container](image/array_container.png "array container")
-
----
-
-#### Stack(sequential-based, single lined-list)
-
-![Stack](image/stack.png)
+<h4 id="6.2">Stack(sequential-based, single lined-list)抽象数据类型(ADT)</h4>
 
 > 我们可以很容易的使用array container来实现Stack，但是我们通常使用链表来实现Stack。
 
@@ -276,6 +265,19 @@ Vector和Heap都是array-based，因此我们可以将二者抽象为**ArrayCont
 - push(element) : 把指定的element推入栈，最为topelement
 - size() : Collection共有多少个元素
 - top() : 得到top元素
+
+<h4 id="6.3">Stack UML类图</h4>
+
+![Stack UML类图](image/stack.png)
+
+<h4 id="6.4">Stack实现</h4>
+
+**源码:**
+
+- [Stack.java](src/Stack.java)
+- [LinearNode.java](src/LinearNode.java)
+
+---
 
 **linear liked node**
 
