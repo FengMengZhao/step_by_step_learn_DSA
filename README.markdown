@@ -41,7 +41,7 @@
     - [Queue 实现](#6.4)
     - [ArrayContainer & Stack & Queue一般化抽象UML图](#6.5)
     - [ArrayContainer & Stack & Queuek一般化抽象实现](#6.6)
-- 七. [Deque](#7)
+- 七. [Deque(sequential-based, double linked-list)及ArrayContainer & Stack & Queue & Deque一般化抽象](#7)
     - [目前的Model](#7.1)
     - [Deque抽象数据类型(ADT)](#7.2)
     - [Deque UML类图](#7.3)
@@ -369,8 +369,6 @@ Heap二叉树相关:
 ![目前的Model](image/current-deque.png)
 
 <h4 id="7.2">Deque抽象数据类型(ADT)</h4>
-
-![Deque](image/deque_extends_queue.png)
 
 `Deque`: 称之为double-ended queue；可以在队列两段进行插入和删除操作
 
