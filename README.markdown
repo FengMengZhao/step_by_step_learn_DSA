@@ -37,12 +37,17 @@
 - 六. [Queue(sequential-based, double linked-list)及ArrayContainer & Stack & Queue一般化抽象](#6)
     - [目前的Model](#6.1)
     - [Queue抽象数据类型(ADT)](#6.2)
-    - [Queue UML图](#6.3)
+    - [Queue UML类图](#6.3)
     - [Queue 实现](#6.4)
     - [ArrayContainer & Stack & Queue一般化抽象UML图](#6.5)
     - [ArrayContainer & Stack & Queuek一般化抽象实现](#6.6)
 - 七. [Deque](#7)
     - [目前的Model](#7.1)
+    - [Deque抽象数据类型(ADT)](#7.2)
+    - [Deque UML类图](#7.3)
+    - [Deque 实现](#7.4)
+    - [ArrayContainer & Stack & Queue & Deque一般化抽象UML图](#7.5)
+    - [ArrayContainer & Stack & Queuek & Deque一般化抽象实现](#7.6)
 - 八. [Linked-Based Container Generalization](#8)
 - 十. [Array-Based Container & Linked-Based Container Generalization](#10)
 - 十一. [BinaryTree](#11)
@@ -72,7 +77,12 @@
 
 <h3 id="1.2">读者群</h3>
 
-如果你初学数据结构和算法,对Java类集框架底层实现和类结构演化感兴趣;如果你想了解简单的类设计,想弄明白平时常用的Java类集抽象层的设计原理;如果你想找一个完整的,一步一个脚印的类演化过程;如果你想学习UML,通过手画UML理解类之间的继承关联和依赖等关系,私下里过一下设计师的瘾;那么,这个入门的项目就是为你设计的,希望能够给你提供价值.
+- 如果你初学数据结构和算法,对Java类集框架底层实现和类结构演化感兴趣
+- 如果你想了解简单的类设计,想弄明白平时常用的Java类集抽象层的设计原理
+- 如果你想找一个完整的,一步一个脚印的类演化过程
+- 如果你想学习UML,通过手画UML理解类之间的继承关联和依赖等关系,私下里过一下设计师的瘾
+
+如果满足上述条件之一,这个入门的项目就是为你设计的,希望能够给你提供价值.
 
 <h3 id="1.3">术语和缩写</h3>
 
@@ -318,7 +328,7 @@ Heap二叉树相关:
 
 > 我们用单链表实现了Stack数据结构，由于队列有对头和对尾，我们要使用双链表实现Queue数据结构
 
-<h4 id="6.3">Queue UML图</h4>
+<h4 id="6.3">Queue UML类图</h4>
 
 ![Queue](image/queue.png)
 
@@ -352,20 +362,19 @@ Heap二叉树相关:
 
 ---
 
+<h3 id="7">Deque(sequential-based, double linked-list)及ArrayContainer & Stack & Queue & Deque一般化抽象</h3>
 
+<h4 id="7.1">目前的Model</h4>
 
+![目前的Model](image/current-deque.png)
 
-
-
----
-
-#### Deque(sequential-based, double linked-list)
+<h4 id="7.2">Deque抽象数据类型(ADT)</h4>
 
 ![Deque](image/deque_extends_queue.png)
 
-**Deque**: 称之为double-ended queue；可以在队列两段进行插入和删除操作
+`Deque`: 称之为double-ended queue；可以在队列两段进行插入和删除操作
 
-> Deque继承Queue，比Queue增加的功能为可以任意的一端进行插入和删除操作
+> `Deque`继承`Queue`,比`Queue`增加的功能为可以任意的一端进行插入和删除操作
 
 操作：
 
@@ -377,6 +386,44 @@ Heap二叉树相关:
 - removeBack() : 删除back element
 - removeFront() : 删除front element
 - size() : Collection含有多少个元素
+
+<h4 id="7.3">Deque UML类图</h4>
+
+![Deque UML类图](image/deque.png)
+
+<h4 id="7.4">Deque 实现</h4>
+
+**源码:**
+
+[Deque.java](src/arraybased-stack-queu/Deque.java)
+
+<h4 id="7.5">ArrayContainer & Stack & Queue & Deque一般化抽象UML图</h4>
+
+![ArrayContainer & Stack & Queue & Deque UML类图](image/arraybased-stack-queue-deque.png)
+
+<h4 id="7.6">ArrayContainer & Stack & Queue & Deque实现</h4>
+
+**源码:**
+
+- [Container.java](src/arraybased-stack-queue/Container.java)
+- [Vector.java](src/arraybased-stack-queue/Vector.java)
+- [Heap.java](src/arraybased-stack-queue/Heap.java)
+- [FixedVector.java](src/arraybased-stack-queue/FixedVector.java)
+- [DynamicVector.java](src/arraybased-stack-queue/DynamicVector.java)
+- [MaxHeap.java](src/arraybased-stack-queue/MaxHeap.java)
+- [MinHeap.java](src/arraybased-stack-queue/MinHeap.java)
+- [Stack.java](src/arraybased-stack-queue/Stack.java)
+- [SLNode.java](src/arraybased-stack-queue/SLNode.java)
+- [DLNode.java](src/arraybased-stack-queue/DLNode.java)
+- [Queue.java](src/arraybased-stack-queue/Queue.java)
+- [Deque.java](src/arraybased-stack-queue/Deque.java)
+
+---
+
+
+
+
+
 
 **Implementation**
 
