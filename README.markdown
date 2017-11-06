@@ -152,7 +152,9 @@
 
 <h4 id="2.4">Vector数据结构(Data Structure)</h4>
 
-**源码:** [Vector.java](src/Vector.java)
+**源码:** 
+
+- [Vector.java](src/VectorInit.java)
 
 ---
 
@@ -238,13 +240,13 @@ Heap二叉树相关:
 
 **源码:**
 
-- [Container.java](src/arraybased/Container.java)
-- [Vector.java](src/arraybased/Vector.java)
-- [Heap.java](src/arraybased/Heap.java)
-- [FixedVector.java](src/arraybased/FixedVector.java)
-- [DynamicVector.java](src/arraybased/DynamicVector.java)
-- [MaxHeap.java](src/arraybased/MaxHeap.java)
-- [MinHeap.java](src/arraybased/MinHeap.java)
+- [Container.java](src/generalize/ArrayContainer.java)
+- [Vector.java](src/generalize/Vector.java)
+- [Heap.java](src/generalize/Heap.java)
+- [FixedVector.java](src/generalize/FixedVector.java)
+- [DynamicVector.java](src/generalize/DynamicVector.java)
+- [MaxHeap.java](src/generalize/MaxHeap.java)
+- [MinHeap.java](src/generalize/MinHeap.java)
 
 ---
 
@@ -300,15 +302,15 @@ Heap二叉树相关:
 
 **源码:**
 
-- [Container.java](src/arraybased-stack/Container.java)
-- [Vector.java](src/arraybased-stack/Vector.java)
-- [Heap.java](src/arraybased-stack/Heap.java)
-- [FixedVector.java](src/arraybased-stack/FixedVector.java)
-- [DynamicVector.java](src/arraybased-stack/DynamicVector.java)
-- [MaxHeap.java](src/arraybased-stack/MaxHeap.java)
-- [MinHeap.java](src/arraybased-stack/MinHeap.java)
-- [LinearNode.java](src/arraybased-stack/LinearNode.java)
-- [Stack.java](src/arraybased-stack/Stack.java)
+- [Container.java](src/generalize/LinearLinkeddContainer.java)
+- [Vector.java](src/generalize/Vector.java)
+- [Heap.java](src/generalize/Heap.java)
+- [FixedVector.java](src/generalize/FixedVector.java)
+- [DynamicVector.java](src/generalize/DynamicVector.java)
+- [MaxHeap.java](src/generalize/MaxHeap.java)
+- [MinHeap.java](src/generalize/MinHeap.java)
+- [LinearNode.java](src/generalize/LinearNode.java)
+- [Stack.java](src/generalize/Stack.java)
 
 ---
 
@@ -353,17 +355,19 @@ Heap二叉树相关:
 
 **源码:**
 
-- [Container.java](src/arraybased-stack-queue/Container.java)
-- [Vector.java](src/arraybased-stack-queue/Vector.java)
-- [Heap.java](src/arraybased-stack-queue/Heap.java)
-- [FixedVector.java](src/arraybased-stack-queue/FixedVector.java)
-- [DynamicVector.java](src/arraybased-stack-queue/DynamicVector.java)
-- [MaxHeap.java](src/arraybased-stack-queue/MaxHeap.java)
-- [MinHeap.java](src/arraybased-stack-queue/MinHeap.java)
-- [Stack.java](src/arraybased-stack-queue/Stack.java)
-- [SLNode.java](src/arraybased-stack-queue/SLNode.java)
-- [DLNode.java](src/arraybased-stack-queue/DLNode.java)
-- [Queue.java](src/arraybased-stack-queue/Queue.java)
+- [Container.java](src/generalize/Container.java)
+- [ArrayContainer.java](src/generalize/ArrayContainer.java)
+- [LinkedContainer.java](src/generalize/LinkedContainer.java)
+- [Vector.java](src/generalize/Vector.java)
+- [Heap.java](src/generalize/Heap.java)
+- [FixedVector.java](src/generalize/FixedVector.java)
+- [DynamicVector.java](src/generalize/DynamicVector.java)
+- [MaxHeap.java](src/generalize/MaxHeap.java)
+- [MinHeap.java](src/generalize/MinHeap.java)
+- [Stack.java](src/generalize/Stack.java)
+- [SLNode.java](src/generalize/SLNode.java)
+- [DLNode.java](src/generalize/DLNode.java)
+- [Queue.java](src/generalize/Queue.java)
 
 ---
 
@@ -398,7 +402,7 @@ Heap二叉树相关:
 
 **源码:**
 
-[Deque.java](src/arraybased-stack-queu/Deque.java)
+[Deque.java](src/Deque.java)
 
 <h4 id="7.5">ArrayContainer & Stack & Queue & Deque一般化抽象UML图</h4>
 
@@ -408,17 +412,19 @@ Heap二叉树相关:
 
 **源码:**
 
-- [Container.java](src/arraybased-stack-queue/Container.java)
-- [Vector.java](src/arraybased-stack-queue/Vector.java)
-- [Heap.java](src/arraybased-stack-queue/Heap.java)
-- [FixedVector.java](src/arraybased-stack-queue/FixedVector.java)
-- [DynamicVector.java](src/arraybased-stack-queue/DynamicVector.java)
-- [MaxHeap.java](src/arraybased-stack-queue/MaxHeap.java)
-- [MinHeap.java](src/arraybased-stack-queue/MinHeap.java)
-- [Stack.java](src/arraybased-stack-queue/Stack.java)
-- [SLNode.java](src/arraybased-stack-queue/SLNode.java)
-- [DLNode.java](src/arraybased-stack-queue/DLNode.java)
-- [Queue.java](src/arraybased-stack-queue/Queue.java)
+- [Container.java](src/generalize/Container.java)
+- [ArrayContainer.java](src/generalize/ArrayContainer.java)
+- [LinkedContainer.java](src/generalize/LinkedContainer.java)
+- [Vector.java](src/generalize/Vector.java)
+- [Heap.java](src/generalize/Heap.java)
+- [FixedVector.java](src/generalize/FixedVector.java)
+- [DynamicVector.java](src/generalize/DynamicVector.java)
+- [MaxHeap.java](src/generalize/MaxHeap.java)
+- [MinHeap.java](src/generalize/MinHeap.java)
+- [Stack.java](src/generalize/Stack.java)
+- [SLNode.java](src/generalize/SLNode.java)
+- [DLNode.java](src/generalize/DLNode.java)
+- [Queue.java](src/generalize/Queue.java)
 - [Deque.java](src/arraybased-stack-queue/Deque.java)
 
 ---
@@ -448,7 +454,7 @@ Heap二叉树相关:
 
 **源码:**
 
-- [TreeContainer.java](src/generalize/TreeContainer.java)
+- [BinaryTreeNode.java](src/generalize/BinaryTreeNode.java)
 - [BinaryTree.java](src/generalize/BinaryTree.java)
 
 <h4 id="8.5">ArrayContainer & LinearLinkedContainer & BinaryTree一般化抽象UML图</h4>
