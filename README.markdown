@@ -4,55 +4,64 @@
 
 ## 目录
 
-- 一. [简介](#1)
+- [一. 简介](#1)
     - [目的](#1.1)
     - [读者群](#1.2)
     - [术语和缩写](#1.3)
     - [工具](#1.4)
     - [概览](#1.5)
-- 二. [Vector](#2)
+- [二. Vector](#2)
     - [目前的Model](#2.1)
     - [Vector抽象数据类型(ADT)](#2.2)
     - [Vector UML类图](#2.3)
     - [Vector数据结构(Data Structure)](#2.4)
-- 三. [DynamicVector及Vector Generalization](#3)
+- [三. DynamicVector及Vector Generalization](#3)
     - [目前的Model](#3.1)
     - [DynamicVector UML类图](#3.2)
     - [FixedVector & DynamicVector Gneralization](#3.3)
     - [Vector一般化抽象实现](#3.4)
-- 四. [Heap及ArrayBased Container一般化抽象](#4)
+- [四. Heap及ArrayBased Container一般化抽象](#4)
     - [目前的Model](#4.1)
     - [Heap抽象数据类型(ADT)](#4.2)
     - [Heap UML类图](#4.3)
     - [Heap一般化抽象实现](#4.4)
-    - [Array-Based Container UML类图](#4.5)
+    - [Array-Based Container(Vector & Heap)一般化抽象UML类图](#4.5)
     - [Array-Based Container实现](#4.6)
-- 五. [Stack(sequential-based, single lined-list)及ArrayContainer & Stack一般化抽象](#5)
+- [五. Stack(sequential-based, single lined-list)及ArrayContainer & Stack一般化抽象](#5)
     - [目前的Model](#5.1)
     - [Stack抽象数据类型(ADT)](#5.2)
     - [Stack UML图](#5.3)
     - [Stack实现](#5.4)
     - [ArrayContainer & Stack一般化抽象UML图](#5.5)
     - [ArrayContainer & Stack一般化抽象实现](#5.6)
-- 六. [Queue(sequential-based, double linked-list)及ArrayContainer & Stack & Queue一般化抽象](#6)
+- [六. Queue(sequential-based, double linked-list)及ArrayContainer & Stack & Queue一般化抽象](#6)
     - [目前的Model](#6.1)
     - [Queue抽象数据类型(ADT)](#6.2)
     - [Queue UML类图](#6.3)
     - [Queue 实现](#6.4)
     - [ArrayContainer & Stack & Queue一般化抽象UML图](#6.5)
     - [ArrayContainer & Stack & Queuek一般化抽象实现](#6.6)
-- 七. [Deque(sequential-based, double linked-list)及ArrayContainer & Stack & Queue & Deque一般化抽象](#7)
+- [七. Deque(sequential-based, double linked-list)及ArrayContainer & Stack & Queue & Deque一般化抽象](#7)
     - [目前的Model](#7.1)
     - [Deque抽象数据类型(ADT)](#7.2)
     - [Deque UML类图](#7.3)
     - [Deque 实现](#7.4)
     - [ArrayContainer & Stack & Queue & Deque一般化抽象UML图](#7.5)
     - [ArrayContainer & Stack & Queuek & Deque一般化抽象实现](#7.6)
-- 八. [Linked-Based Container Generalization](#8)
-- 十. [Array-Based Container & Linked-Based Container Generalization](#10)
-- 十一. [BinaryTree](#11)
-- 十二. [BinarySearchTree及BinaryTree Generalization](#12)
-- 十三. [最终Generalization](#13)
+- [八. 二叉树(General Binary Tree)及一般化抽象](#8)
+    - [目前的Model](#8.1)
+    - [二叉树抽象数据类型(ADT)](#8.2)
+    - [二叉树UML类图](#8.3)
+    - [BinaryTree实现](#8.4)
+    - [ArrayContainer & LinearLinkedContainer & BinaryTree一般化抽象UML图](#8.5)
+    - [ArrayContainer & LinearLinkedContainer & BinaryTree实现](#8.6)
+- [九. 二叉搜索树(BST, Binary Search Tree)及最终的抽象](#9)
+    - [Final Model](#9.1)
+    - [搜索二叉树抽象数据类型(ADT)](#9.2)
+    - [搜索二叉树UML类图](#9.3)
+    - [BinarySearchTree实现](#9.4)
+    - [Final一般化抽象UML图](#9.5)
+    - [Final实现](#9.6)
 
 ---
 
@@ -147,7 +156,7 @@
 
 <h4 id="2.4">Vector数据结构(Data Structure)</h4>
 
-**源码:** [VectorInit.java](src/VectorInit.java)
+**源码:** [Vector.java](src/Vector.java)
 
 ---
 
@@ -225,7 +234,7 @@ Heap二叉树相关:
 
 第二部分中介绍的`Vector`和第三部分介绍的`Heap`底层实现都是Array.同样,我们将之进行一般化抽象.
 
-<h4 id="4.5">Array-Based Container UML类图</h4>
+<h4 id="4.5">Array-Based Container(Vector & Heap)一般化抽象UML类图</h4>
 
 ![Vector & Heap Generalization](image/vector-heap-generalization.png "ArrayBased Container")
 
@@ -245,7 +254,7 @@ Heap二叉树相关:
 
 <h3 id="5">五. Stack(sequential-based, single lined-list)及ArrayContainer & Stack一般化抽象</h3>
 
-我们在第二三四部分介绍了Array-Based的数据结构及它们的一般化抽象;在接下来的第六七八部分将介绍LinkedNode-Based的数据结构及它们的一般化抽象过程.首先要介绍的是以链表为底层实现的栈(Stack).
+我们在第二三四部分介绍了Array-Based的数据结构及它们的一般化抽象;在接下来的第五六七部分将介绍LinkedNode-Based的数据结构及它们的一般化抽象过程.首先要介绍的是以链表为底层实现的栈(Stack).
 
 <h4 id="5.1">目前的Model</h4>
 
@@ -362,7 +371,7 @@ Heap二叉树相关:
 
 ---
 
-<h3 id="7">Deque(sequential-based, double linked-list)及ArrayContainer & Stack & Queue & Deque一般化抽象</h3>
+<h3 id="7">七. Deque(sequential-based, double linked-list)及ArrayContainer & Stack & Queue & Deque一般化抽象</h3>
 
 <h4 id="7.1">目前的Model</h4>
 
@@ -418,88 +427,13 @@ Heap二叉树相关:
 
 ---
 
+<h3 id="8">八. 二叉树(General Binary Tree)及一般化抽象</h3>
 
+<h4 id="8.1">目前的Model</h4>
 
+![目前的Model](image/current-binarytree.png)
 
-
-
-**Implementation**
-
-[Deque.java](src/Deque.java)
-
-**Deque应用**
-
-- web browser's history
-
----
-
-#### 抽象化Stack、Queue和Deque为LinearLinkedContainer
-
-![linear linked container](image/linear_linked_container.png)
-
----
-
-#### 抽象化LinkedContainer和ArrayContainer为Container
-
-![array-container linear linked-container](image/array_linear_linked_container.png)
-
----
-
-#### 进一步抽象化Container
-
-接下来我们要讲解General Binary Tree，由于General Binary Tree是Linked Container，但是不是Linear Linked Container，所以我么有必要将我们的UML模型记性进一步的抽象。
-
-![结构框架](image/dsa_learn_scheme.png "结构框架")
-
-**Container-ArrayContiner部分**
-
-![container arrayContainer](image/container_arrayContainer.png)
-
-*源代码*
-
-[Container.java](src/generalize/Container.java)
-
-[ArrayContainer.java](src/generalize/ArrayContainer.java)
-
-[Vector.java](src/generalize/Vector.java)
-
-[FixedVector.java](src/generalize/FixedVector.java)
-
-[DynamicVector.java](src/generalize/DynamicVector.java)
-
-[Heap.java](src/generalize/Heap.java)
-
-[MaxHeap.java](src/generalize/MaxHeap.java)
-
-[MinHeap.java](src/generalize/MinHeap.java)
-
-**Container-LinkedContainer部分**
-
-![Container linkedContainer](image/container_linkedContainer.png)
-
-**源代码**
-
-[LinkedContainer.java](src/generalize/LinkedContainer.java)
-
-[LinearLinkedContainer.java](src/generalize/LinearLinkedContainer.java)
-
-[Stack.java](src/generalize/Stack.java)
-
-[Queue.java](src/generalize/Queue.java)
-
-[Deque.java](src/generalize/Deque.java)
-
-[TreeContainer.java](src/generalize/TreeContainer.java)
-
-[BinaryTree.java](src/generalize/BinaryTree.java)
-
-[BinarySearchTree.java](src/generalize/BinarySearchTree.java)
-
----
-
-#### General Binary Tree
-
-![binary tree](image/binary_tree.png)
+<h4 id="8.2">二叉树抽象数据类型(ADT)</h4>
 
 操作:
 
@@ -510,26 +444,56 @@ Heap二叉树相关:
 - preorderTraverse() : 前序遍历
 - size() : Collection中包含的元素的多少
 
-**Implementation**
+<h4 id="8.3">二叉树UML类图</h4>
 
-> 此时我们已经建立的完全的抽象模型，实现也是基于模型进行。
+![二叉树UML类图](image/binarytree.png)
 
-[TreeContainer.java](src/generalize/TreeContainer.java)
+<h4 id="8.4">BinaryTree实现</h4>
 
-[BinaryTree.java](src/generalize/BinaryTree.java)
+**源码:**
 
-**BinaryTree的应用**
+- [TreeContainer.java](src/generalize/TreeContainer.java)
+- [BinaryTree.java](src/generalize/BinaryTree.java)
 
-- Huffman coding
-- Expression Tree
+<h4 id="8.5">ArrayContainer & LinearLinkedContainer & BinaryTree一般化抽象UML图</h4>
+
+![ArrayContainer & LinearLinkedContainer & BinaryTree一般化抽象UML图](image/arraycontainer-linearlinkedcontainer-binarytree.png)
+
+<h4 id="8.6">ArrayContainer & LinearLinkedContainer & BinaryTree实现</h4>
+
+**源码:**
+
+- [Container.java](src/generalize/Container.java)
+- [ArrayContainer.java](src/generalize/ArryaContainer.java)
+- [LinkedContainer.java](src/generalize/LinkedContainer.java)
+- [LinearLinkedContainer.java](src/generalize/LinearLinkedContainer.java)
+- [Vector.java](src/generalize/Vector.java)
+- [Heap.java](src/generalize/Heap.java)
+- [FixedVector.java](src/generalize/FixedVector.java)
+- [DynamicVector.java](src/generalize/DynamicVector.java)
+- [MaxHeap.java](src/generalize/MaxHeap.java)
+- [MinHeap.java](src/generalize/MinHeap.java)
+- [Stack.java](src/generalize/Stack.java)
+- [Node.java](src/generalize/Node.java)
+- [SLNode.java](src/generalize/SLNode.java)
+- [DLNode.java](src/generalize/DLNode.java)
+- [BinaryTreeNode.java](src/generalize/BinaryTreeNode.java)
+- [Queue.java](src/generalize/Queue.java)
+- [Deque.java](src/generalize/Deque.java)
+- [NodeProcessor.java](src/generalize/NodeProcessor.java)
+- [BinaryTree.java](src/generalize/BinaryTree.java)
 
 ---
 
-#### BinarySearchTree(BST)
+<h3 id="9">九. 搜索二叉树(General Binary Tree)</h3>
 
-![binary search tree](image/binary_search_tree.png)
+<h4 id="9.1">Final Model</h4>
 
-**BST**: 是一个绝对有序的二叉树(totally ordered binary tree)。绝对有序指的是：一个node的leftChild的data小于node的data；node的rightChild的data大于或者等于node的data。
+![Final Model](image/overview.png "Fixed Vector")
+
+<h4 id="9.2">搜索二叉树抽象数据类型(ADT)]</h4>
+
+`BST`: 是一个绝对有序的二叉树(totally ordered binary tree)。绝对有序指的是：一个node的leftChild的data小于node的data；node的rightChild的data大于或者等于node的data。
 
 操作：
 
@@ -546,13 +510,47 @@ Heap二叉树相关:
 - remove(element) : 从Collection中删除指定的element
 - successor() : get the inorder successor of the given element
 
-**Implementation**
+<h4 id="9.3">搜索二叉树UML类图</h4>
 
-[BinarySearchTree.java](src/generalize/BinarySearchTree.java)
+![搜索二叉树UML类图](image/binarysearchtree.png)
 
-**BST应用**
+<h4 id="9.4">BinarySearchTree实现</h4>
 
-- dictionary
+**源码:**
+
+- [BSTNode.java](src/generalize/BST.java)
+- [BinarySearchTree.java](src/generalize/BinarySearchTree.java)
+
+<h4 id="9.5">Final Uml类图</h4>
+
+![Final UML类图](image/final.png)
+
+<h4 id="9.6">Final实现</h4>
+
+**源码:**
+
+- [Container.java](src/generalize/Container.java)
+- [ArrayContainer.java](src/generalize/ArryaContainer.java)
+- [LinkedContainer.java](src/generalize/LinkedContainer.java)
+- [LinearLinkedContainer.java](src/generalize/LinearLinkedContainer.java)
+- [Vector.java](src/generalize/Vector.java)
+- [Heap.java](src/generalize/Heap.java)
+- [FixedVector.java](src/generalize/FixedVector.java)
+- [DynamicVector.java](src/generalize/DynamicVector.java)
+- [MaxHeap.java](src/generalize/MaxHeap.java)
+- [MinHeap.java](src/generalize/MinHeap.java)
+- [Stack.java](src/generalize/Stack.java)
+- [Node.java](src/generalize/Node.java)
+- [SLNode.java](src/generalize/SLNode.java)
+- [DLNode.java](src/generalize/DLNode.java)
+- [Node.java](src/generalize/Node.java)
+- [BinaryTreeNode.java](src/generalize/BinaryTreeNode.java)
+- [BSTNode.java](src/generalize/BSTNode.java)
+- [Queue.java](src/generalize/Queue.java)
+- [Deque.java](src/generalize/Deque.java)
+- [NodeProcessor.java](src/generalize/NodeProcessor.java)
+- [BinaryTree.java](src/generalize/BinaryTree.java)
+- [BinarySearchTree.java](src/generalize/BinarySearchTree.java)
 
 ---
 
