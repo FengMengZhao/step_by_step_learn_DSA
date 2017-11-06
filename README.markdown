@@ -109,16 +109,12 @@
 
 - 第二部分,介绍`Vector`数据结构
 - 第三部分,介绍`DynamicVector`及对`Vector`的一般化抽象
-- 第四部分,介绍`Heap`数据结构,包括`MaxHeap`和`MinHeap`
-- 第五部分,介绍底层实现是Array的`Vector`和`Heap`的一般化抽象
-- 第六部分,介绍`Stack`数据结构
-- 第七部分,介绍`Queue`数据结构
-- 第八部分,介绍`Deque`数据结构及对`Queue`的一般化抽象
-- 第九部分,介绍底层实现是Linked Node的`Stack`,`Queue`及`Deque`的一般化抽象
-- 第十部分,介绍底层实现是Array的`ArrayContainer`和底层实现是Linked Node的`LinkedContainer`的一般化抽象
-- 第十一部分,介绍`BinaryTree`数据结构
-- 第十二部分,介绍`BinarySearchTree`数据结构及底层实现是`TreeNode`的`BinaryTree`的一般化抽象
-- 第十三部分,最终的一般化抽象.介绍将底层实现是Array的`ArrayContainer`和底层实现是`LinkedNode`的`LinearLinkedContainer`以及底层实现是`TreeNode`的`TreeContainer`的一般化抽象.
+- 第四部分,介绍`Heap`数据结构及`Vector`和`Heap`一般化抽象
+- 第五部分,介绍`Stack`数据结构及`Vector`,`Heap`,`Stack`的一般化抽象
+- 第六部分,介绍`Queue`数据结构及`Vector`,`Heap`,`Stack`,`Queue`的一般化抽象
+- 第七部分,介绍`Deque`数据结构及对`Vector`,`Heap`,`Stack`,`Queue`,`Deque`的一般化抽象
+- 第八部分,介绍`BinaryTree`数据结构及对`Vector`,`Heap`,`Stack`,`Queue`,`Deque`,`BinaryTree`的一般化抽象
+- 第九部分,介绍`BinarySearchTree`数据结构及`Vector`,`Heap`,`Stack`,`Queue`,`Deque`,`BinaryTree`,`BinarySearchTree`的最终一般化抽象
 
 先一睹为快最终的模型(Model):
 
