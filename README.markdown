@@ -551,6 +551,8 @@ Heap二叉树相关:
 
 ---
 
-<center>End</center>
+> 以上是*版本2*的内容
+
+> **版本3将对项目增加泛型(Generic Type)和集合迭代(Iterator)功能,敬请期待...**
 
 ---
